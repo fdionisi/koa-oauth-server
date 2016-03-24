@@ -45,7 +45,7 @@ KoaOAuthServer.prototype.authenticate = function() {
 
     try {
       this.state.oauth = {
-        token: yield server.authenticate(request)
+        token: yield server.authenticate(request, response)
       };
     } catch (e) {
       return handleError.call(this, e);
